@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s
+
+remote_write:
+  # Optional: Forward metrics to other backends like VictoriaMetrics or Cortex
+
+# scrape_configs:
+#   # Optional: Scrape other metrics if needed
+#   - job_name: 'self'
+#     static_configs:
+#       - targets: ['localhost:9090']  # Central Prometheus metrics

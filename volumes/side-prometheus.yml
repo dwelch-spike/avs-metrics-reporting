@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'aerospike-vector-search'
+    metrics_path: '/manage/rest/v1/prometheus'
+    static_configs:
+      - targets: ['aerospike-vector-search:5040']  # Scrape the app's metrics endpoint
+
+remote_write:
+  - url: "http://central-prometheus:9090/api/v1/write"  # Send scraped metrics to the central Prometheus
